@@ -1,0 +1,31 @@
+From 1f77bba92f9a0292f8505cd1dcbb32c486b6f4df Mon Sep 17 00:00:00 2001
+From: Qianrenli <908559578@qq.com>
+Date: Tue, 15 Apr 2025 05:00:32 +0000
+Subject: [PATCH] update envs
+
+---
+ rl_zoo3/import_envs.py | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+
+diff --git a/rl_zoo3/import_envs.py b/rl_zoo3/import_envs.py
+index f8a3599..1752c6a 100644
+--- a/rl_zoo3/import_envs.py
++++ b/rl_zoo3/import_envs.py
+@@ -70,3 +70,14 @@ for env_id in MaskVelocityWrapper.velocity_indices.keys():
+         id=f"{name}NoVel-v{version}",
+         entry_point=create_no_vel_env(env_id),  # type: ignore[arg-type]
+     )
++
++
++import os
++config_folders = os.listdir("custom_envs/configs/exp-change_antenna_num")
++for folder in config_folders:
++    config_folder_path = os.path.join("custom_envs/configs/exp-change_antenna_num", folder)
++    register(
++        id="MISOEnv-" + folder,
++        entry_point="custom_envs.MISOenv:MISOEnvWrapper",  # Replace with the actual module path
++        kwargs={"config_folder_path": config_folder_path},
++    )
+-- 
+2.34.1
+
