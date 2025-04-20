@@ -1,0 +1,31 @@
+diff --git a/hyperparams/ppo.yml b/hyperparams/ppo.yml
+index 138fd4f..85c6493 100644
+--- a/hyperparams/ppo.yml
++++ b/hyperparams/ppo.yml
+@@ -580,3 +580,26 @@ Walker2d-v4:
+   gae_lambda: 0.95
+   max_grad_norm: 1
+   vf_coef: 0.871923
++
++MISOEnv-antenna-2:
++  normalize: true
++  n_envs: 8
++  n_timesteps: !!float 3e6
++  policy: 'MlpPolicy'
++  n_steps: 8
++  batch_size: 64
++  gamma: 0.95
++  gae_lambda: 0.99
++  n_epochs: 10
++  learning_rate: 0.0009462980142410582
++  clip_range: 0.1
++  ent_coef: !!float 6.009604315096208e-05
++  vf_coef: 0.8855255956624888
++  max_grad_norm: 0.3
++  sde_sample_freq: 4
++  policy_kwargs: "dict(
++                    log_std_init=-2.0, 
++                    ortho_init=False,
++                    net_arch=dict(pi=[256, 256], vf=[256, 256]),
++                    activation_fn=nn.ReLU
++                  )"

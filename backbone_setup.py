@@ -30,18 +30,19 @@ def copy_backbone_files():
     print("Files copied successfully.")
 
 def apply_patch():
-    patch_file = "env_patch.patch"
-    if not os.path.exists(patch_file):
-        raise FileNotFoundError(f"Patch file '{patch_file}' not found")
-    
-    print(f"Applying patch {patch_file}...")
-    try:
-        subprocess.run(["git", "apply", patch_file], check=True)
-        print("Patch applied successfully.")
-    except subprocess.CalledProcessError as e:
-        print(f"Failed to apply patch: {e}")
-    except FileNotFoundError:
-        print("Git not found. Please install Git to apply patches.")
+    patch_files = ["env_patch.patch", "param.patch"]
+    for patch_file in patch_files:
+        if not os.path.exists(patch_file):
+            raise FileNotFoundError(f"Patch file '{patch_file}' not found")
+        
+        print(f"Applying patch {patch_file}...")
+        try:
+            subprocess.run(["git", "apply", patch_file], check=True)
+            print("Patch applied successfully.")
+        except subprocess.CalledProcessError as e:
+            print(f"Failed to apply patch: {e}")
+        except FileNotFoundError:
+            print("Git not found. Please install Git to apply patches.")
 
 def main():
     try:
