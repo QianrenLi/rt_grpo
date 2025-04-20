@@ -1,5 +1,6 @@
 # rt_grpo
-
+This the code of paper 
+_Layout-Specific Modeling and Group Relative Policy Optimization for Indoor Fluid Antenna Systems_, authored by Tong Zhang, Qianren Li, Shuai Wang, Wanli Ni, Jiliang Zhang, Rui Wang, Kai-Kit Wong, and Chan-Byoung Chae, which has been submitted to IEEE for possible publication.
 The training part relies on the `rl-baselines3-zoo`, which serves as the backbone.
 
 ## Setup
