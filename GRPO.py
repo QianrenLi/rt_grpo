@@ -328,6 +328,7 @@ def enjoy() -> None:  # noqa: C901
         episode_reward_window.extend(episode_rewards)
 
         print(f'Episode {i_episode}, Avg Reward: {np.mean(episode_rewards):.2f}')
+        print(f'Episode {i_episode}, Max Reward: {np.max(episode_rewards):.2f}')
                 
     writer.close()
     env.close()
