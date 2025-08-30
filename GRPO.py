@@ -23,9 +23,9 @@ from tqdm import tqdm
 
 device = th.device("cuda" if th.cuda.is_available() else "cpu")
 
-group_num = 1
-trajectories_per_update = 50
-trajectory_len = 15
+group_num = 1 # This should be 1 in default
+trajectories_per_update = 50 # This is the group size
+trajectory_len = 15 # This is the horizon length
 beta = 0.0001
 
 def collect_trajectory(env, policy, trajectory_len = 15, deterministic = False):
