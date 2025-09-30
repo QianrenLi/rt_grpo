@@ -8,6 +8,7 @@ After setting up the environment, you can apply backbone setup to setup necessar
 ```bash
 python backbone_setup.py
 ```
+> Note: it is recommended to directly clone the repo with  `git clone --recursive https://github.com/QianrenLi/rt_grpo.git`.
 
 ## Training
 To run the GRPO algorithm, you need to first use the `backbone_setup.py` script to set up the backbone correctly.
